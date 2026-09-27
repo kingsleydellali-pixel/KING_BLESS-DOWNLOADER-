@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: king-bless-downloader
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: BOT_NAME
+        value: KING_BLESS DOWNLOADER
+      - key: DEVELOPER
+        value: KINGSLEY-XMD TECH
+      - key: PREFIX
+        value: "."
+      - key: PORT
+        value: "3000"
+      - key: USE_PAIRING_CODE
+        value: "true"
+      - key: SESSION_DIR
+        value: ./sessions
+      - key: NODE_VERSION
+        value: "20"
+    healthCheckPath: /
+    autoDeploy: true
